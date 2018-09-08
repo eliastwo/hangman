@@ -1,0 +1,105 @@
+h1 {
+
+	font-size: 50px;
+}
+
+#start {
+	margin-top: 30px;
+	margin-bottom: 0px;
+	height: 200px;
+	width: 200px;
+}
+
+.col-lg-12 {
+	height: 15px;
+	background: #000000;
+}
+
+.underscores {
+	margin-top: 0px;
+	width: 10px;
+	font-style:  bold;
+	font-size: 40px;
+	display: inline;
+}
+
+.container1 {
+	margin-top: 0px;
+}
+
+  .button {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    float: left;
+    margin: 2px;
+	color: darkcyan;
+  }
+  
+  #clear {
+    margin-left: 20px;
+    font-size: 25px;
+    color: black;
+    border-style: solid;
+    width: 100px;
+  }
+  
+  #buttons {
+    padding-top: 60px;
+  }
+
+#badguess1 {
+	margin-top: 30px;
+	margin-bottom: 0px;
+	height: 200px;
+	width: 200px;
+	display: none;
+}
+
+#badguess2 {
+	margin-top: 30px;
+	margin-bottom: 0px;
+	height: 200px;
+	width: 200px;
+	display: none;
+}
+
+#badguess3 {
+	margin-top: 30px;
+	margin-bottom: 0px;
+	height: 200px;
+	width: 200px;
+	display: none;
+}
+
+#badguess4 {
+	margin-top: 30px;
+	margin-bottom: 0px;
+	height: 200px;
+	width: 200px;
+	display: none;
+}
+
+#badguess5 {
+	margin-top: 30px;
+	margin-bottom: 0px;
+	height: 200px;
+	width: 200px;
+	display: none;
+}
+
+#badguess6 {
+	margin-top: 30px;
+	margin-bottom: 0px;
+	height: 200px;
+	width: 200px;
+	display: none;
+}
+
+#badguess7 {
+	margin-top: 30px;
+	margin-bottom: 0px;
+	height: 200px;
+	width: 200px;
+	display: none;
+}
