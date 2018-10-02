@@ -6,48 +6,48 @@ var      game = {
           possiblePhrases: ['croquet', 'hyphen', 'swivel', 'ostracize', 'yacht', 'squawk', 'rogue', 'quip', 'phlegm'],
 		  gamePhrase: [],
 		  userGuesses: [],
-		  underScores: [],
-		  userInput: []
+		  userInput: [],
+		  underscores: '',
+		  underScores: []
 	};
-	
-		  // Data Reset
-		  var wrongGuess = 0;
-		  var correctGuess = 0;
-		  var n = "";
-		  var guessIndex = '';
-		  var firedButton = "";
-		  var phraseSelect ='';
+
+	  // Data Reset
+	  var wrongGuess = 0;
+	  var correctGuess = 0;
+	  var n = false;
+	  var guessIndex = '';
+	  var firedButton = "";
+	  var phraseSelect ='';
 		  
 		  	phraseSelect = game.possiblePhrases[Math.floor(Math.random() * game.possiblePhrases.length)];
 			game.gamePhrase.push(phraseSelect );
 			
 		  for(var i=0; i < phraseSelect.length; i++) {
-			game.underScores.push("_ ");
+			game.underscores = "_" + ' ' + game.underscores;
+			game.underScores.push("_");
 		  };
 		  
-		  $(".underscores").text(game.underScores);
+		  $(".underscores").text(game.underScores.join(' '));
 		  
 		  	$("button").click(function() {
-			firedButton = $(this).val();
-			game.userInput.push(firedButton);
-			$(".guessed").text(game.userInput);
+				firedButton = $(this).val();
+				game.userInput.push(firedButton);
+				$(".guessed").text(game.userInput);
 
-			n = phraseSelect.includes(firedButton);
-			guessIndex = phraseSelect.indexOf(firedButton);
-			
-			if(wrongGuess === 7) {
-			
-				alert("computer wins");
-				
-			} else if(correctGuess === phraseSelect.length) {
-			
-				alert("Player Wins");
-			
-			} else {
+				n = phraseSelect.toLowerCase().includes(firedButton);
+				console.log(n);
+				console.log(phraseSelect);
+				console.log(firedButton);
+				guessIndex = phraseSelect.toLowerCase().indexOf(firedButton);
 			
 				evaluateKey(n, firedButton, guessIndex);
-			};
 			
+				if(wrongGuess === 7) {
+					alert("computer wins");
+				} else if(correctGuess === phraseSelect.length) {
+					alert("Player Wins");
+				} else {
+				};
 });
 		  
 			function evaluateKey(n, firedButton, guessIndex) {
@@ -69,38 +69,13 @@ var      game = {
 					$("#badguess1").show();
 					return;
 					
-				case 2:
-					$("#badguess1").hide();
-					$("#badguess2").show();
-					return;
+				default:
 				
-				case 3:
-					$("#badguess2").hide();
-					$("#badguess3").show();
-					return;
-				
-				case 4:
-					$("#badguess3").hide();
-					$("#badguess4").show();
-					return;
-				
-				case 5:
-					$("#badguess4").hide();
-					$("#badguess5").show();
-					return;
-				
-				case 6:
-					$("#badguess5").hide();
-					$("#badguess6").show();
-					return;
-				
-				case 7:
-					$("#badguess6").hide();
-					$("#badguess7").show();
+					$("#badguess" + (wrongGuess-1)).hide();
+					$("#badguess" + wrongGuess).show();
 					return;
 				}
 			};
-		 
 		 };
 		  
          
